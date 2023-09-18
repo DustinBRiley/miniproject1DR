@@ -31,8 +31,23 @@ def getClosing(ticker):
 
 stocks = ["MSFT","WMT","PYPL","AAPL","U"]
 
+msft = np.array(getClosing(stocks[0]))
 # (10/10 points) Store this information in a list that you will convert to a array in NumPy.
+#stocks = np.array(getClosing(stocks))
 
+plt.plot(msft)
+
+prices = getClosing(stock)
+prices.sort()
+
+# set axis highs and lows
+plt.axis([1,10,prices[0],prices[-1]])
+
+# set graph labels
+plt.xlabel("Days")
+plt.ylabel("Closing Price")
+plt.title("Closing Price for " + "MSFT")
+plt.show()
 
 
 
