@@ -31,23 +31,28 @@ def getClosing(ticker):
 
 stocks = ["MSFT","WMT","PYPL","AAPL","U"]
 
-msft = np.array(getClosing(stocks[0]))
 # (10/10 points) Store this information in a list that you will convert to a array in NumPy.
-#stocks = np.array(getClosing(stocks))
 
-plt.plot(msft)
+for stock in stocks:
+    stockClosing = np.array(getClosing(stock))
+    # plot the graph
+    plt.plot(stockClosing)
+    # get closing prices and sort them for axis
+    prices = getClosing(stock)
+    prices.sort()
 
-prices = getClosing(stock)
-prices.sort()
+    # set axis highs and lows
+    plt.axis([1,10,prices[0]-2,prices[-1]+2])
 
-# set axis highs and lows
-plt.axis([1,10,prices[0],prices[-1]])
+    # set graph labels
+    plt.xlabel("Days")
+    plt.ylabel("Closing Price")
+    plt.title("Closing Price for " + stock)
 
-# set graph labels
-plt.xlabel("Days")
-plt.ylabel("Closing Price")
-plt.title("Closing Price for " + "MSFT")
-plt.show()
+    # show the graph
+    plt.show()
+    # save the graph to charts folder
+    plt.savefig("charts/" + stock + ".png")
 
 
 
