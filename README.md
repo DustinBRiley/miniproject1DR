@@ -10,3 +10,7 @@ Please run the following:
 pip install -r requirements.txt
 ```
 ## Usage
+Edit the Yahoo Finance Tickers you want into the stocks list:
+```
+stocks = ["MSFT","WMT","PYPL","AAPL","U"]
+```
