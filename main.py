@@ -5,7 +5,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import yfinance as yf
-import pprint as pp
+import pathlib as Path
 
 # (5/5 points) Initial comments with your name, class and project at the top of your .py file.
 # (5/5 points) Proper import of packages used.
@@ -22,6 +22,12 @@ def getClosing(ticker):
         closingList.append(round(price,2))
 
     return closingList
+
+#create charts folder
+try:
+    Path("charts").mkdir()
+except FileExistsError:
+    pass
 
 # microsoft = MSFT
 # walmart = WMT
